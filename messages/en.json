@@ -1,10 +1,15 @@
 {
   "common": {
-    "title": "VisionSeek OS",
-    "welcome": "Welcome"
+    "productName": "VisionSeek OS",
+    "localeName": "English",
+    "decisionInbox": "Decision Inbox",
+    "opportunityWorkspace": "Opportunity Workspace",
+    "evidenceCapture": "Evidence Capture",
+    "livingThesis": "Living Thesis",
+    "decisionRecord": "Decision Record"
   },
-  "decisions": {
-    "title": "Decision Inbox",
-    "description": "Manage pending strategic decisions and approvals."
+  "governance": {
+    "humanDecisionAuthority": "Only an authenticated human decision-maker may approve a final decision.",
+    "immutableAudit": "Audit events are append-only and immutable."
   }
 }

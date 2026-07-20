@@ -1,1 +1,15 @@
-{"common": {"title": "VisionSeek OS", "welcome": "مرحباً"}}
+{
+  "common": {
+    "productName": "نظام فيجن سيك",
+    "localeName": "العربية",
+    "decisionInbox": "صندوق القرارات",
+    "opportunityWorkspace": "مساحة عمل الفرصة",
+    "evidenceCapture": "التقاط الأدلة",
+    "livingThesis": "الأطروحة الحية",
+    "decisionRecord": "سجل القرار"
+  },
+  "governance": {
+    "humanDecisionAuthority": "لا يجوز إلا لصانع قرار بشري موثّق اعتماد قرار نهائي.",
+    "immutableAudit": "أحداث التدقيق تراكمية وغير قابلة للتعديل."
+  }
+}

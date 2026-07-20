@@ -1,14 +1,19 @@
 import { NextResponse } from 'next/server';
-import { OpportunityService } from '@/modules/opportunity/opportunity.service';
+import { CreateOpportunityRequestSchema } from '@/contracts/api';
+import { badRequest, internalError } from '@/contracts/http';
+import { OpportunityService } from '@/modules/opportunity/application/opportunity.service';
 
 const opportunityService = new OpportunityService();
 
 export async function POST(request: Request) {
+  const payload: unknown = await request.json().catch(() => null);
+  const parsed = CreateOpportunityRequestSchema.safeParse(payload);
+  if (!parsed.success) return badRequest('Invalid opportunity payload.', parsed.error.flatten());
+
   try {
-    const body = await request.json();
-    const result = await opportunityService.createOpportunity(body);
-    return NextResponse.json(result);
-  } catch (error: any) {
-    return NextResponse.json({ error: error.message }, { status: 400 });
+    const opportunity = await opportunityService.create(parsed.data);
+    return NextResponse.json({ data: opportunity }, { status: 201 });
+  } catch {
+    return internalError('Unable to create opportunity.');
   }
 }
