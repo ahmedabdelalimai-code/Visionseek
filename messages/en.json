@@ -1,0 +1,10 @@
+{
+  "common": {
+    "title": "VisionSeek OS",
+    "welcome": "Welcome"
+  },
+  "decisions": {
+    "title": "Decision Inbox",
+    "description": "Manage pending strategic decisions and approvals."
+  }
+}

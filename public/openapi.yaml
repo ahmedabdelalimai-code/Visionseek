@@ -1,0 +1,57 @@
+openapi: 3.0.0
+info:
+  title: VisionSeek OS API
+  version: 1.0.0
+  description: API for Integrated Strategic Opportunity Intelligence & Venture Creation Operating System.
+
+paths:
+  /api/opportunities:
+    post:
+      summary: Create a new opportunity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Opportunity'
+      responses:
+        '200':
+          description: Created
+        '400':
+          description: Invalid input
+
+components:
+  schemas:
+    Opportunity:
+      type: object
+      required:
+        - title
+        - type
+        - ownerId
+        - reviewDate
+        - keyGaps
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        description:
+          type: string
+        type:
+          type: string
+          enum: [Tactical, Strategic, Mixed]
+        status:
+          type: string
+        ownerId:
+          type: string
+          format: uuid
+        reviewDate:
+          type: string
+          format: date-time
+        keyGaps:
+          type: string
+        confidence:
+          type: number
+          minimum: 0
+          maximum: 1
