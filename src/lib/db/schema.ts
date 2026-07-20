@@ -102,3 +102,4 @@ export const auditEvents = pgTable('audit_events', {
   reason: text('reason'),
   createdAt: timestamp('created_at').defaultNow().notNull(),
 });
+// Sprint 1 Foundation
