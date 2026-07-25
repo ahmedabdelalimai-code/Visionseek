@@ -5,6 +5,8 @@ export default defineConfig({
   out: './drizzle',
   dialect: 'postgresql',
   dbCredentials: {
-    url: process.env.DATABASE_URL || 'postgresql://visionseek:visionseek_password@localhost:5432/visionseek_os',
+    url: process.env.DATABASE_URL ?? 'postgresql://visionseek:visionseek_password@localhost:5432/visionseek_os',
   },
+  strict: true,
+  verbose: true,
 });

@@ -1,9 +1,2 @@
-import { drizzle } from 'drizzle-orm/node-postgres';
-import { Pool } from 'pg';
-import * as schema from './schema';
-
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL || 'postgresql://visionseek:visionseek_password@localhost:5432/visionseek_os',
-});
-
-export const db = drizzle(pool, { schema });
+export { db } from './client';
+export * from './schema';
